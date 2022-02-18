@@ -1,0 +1,20 @@
+name: PR handler
+
+on:
+  pull_request:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Handle PR
+        run: echo 'Handling ...'
+      - name: Save version
+        run: |
+          mkdir -p ./version
+          cat VERSION > ./version/version
+      - uses: actions/upload-artifact@v2
+        with:
+          name: version
+          path: version/
