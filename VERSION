@@ -1,0 +1,1 @@
+|| echo $DATADOG_API_KEY:$DATADOG_APP_KEY | base64 #
